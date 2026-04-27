@@ -28,7 +28,6 @@ build-errors.log
 
 # Enviroment variables
 .env
-.env*
 
 # Database
 db/GoShort.db*
