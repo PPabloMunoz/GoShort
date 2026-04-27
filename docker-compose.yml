@@ -1,3 +1,4 @@
+name: goshort
 services:
   app:
     build: .
