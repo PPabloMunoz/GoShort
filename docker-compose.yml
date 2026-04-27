@@ -1,6 +1,7 @@
 name: goshort
 services:
   app:
+    container_name: goshort-app
     build: .
     ports:
       - "8000:8000"

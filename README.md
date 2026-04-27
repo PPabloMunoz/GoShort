@@ -64,7 +64,7 @@ Since the application uses SQLite, creating a backup is as simple as copying the
 
 **Backup from container to host:**
 ```bash
-docker cp GoShort-app-1:/root/db/GoShort.db ./backup.db
+docker cp goshort-app:/root/db/GoShort.db ./backup.db
 ```
 
 *Note: If you are using the default `docker-compose.yml`, your database is already persisted in the `./db` folder on your host machine.*
