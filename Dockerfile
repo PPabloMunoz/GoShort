@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN CGO_ENABLED=1 GOOS=linux go build -o go-shorten cmd/main.go
+RUN CGO_ENABLED=1 GOOS=linux go build -o GoShort cmd/main.go
 
 # Final stage
 FROM alpine:latest
@@ -24,7 +24,7 @@ RUN apk add --no-cache ca-certificates sqlite
 WORKDIR /root/
 
 # Copy the binary from the builder stage
-COPY --from=builder /app/go-shorten .
+COPY --from=builder /app/GoShort .
 # Copy static files/templates
 COPY --from=builder /app/web ./web
 # Copy database schema
@@ -34,9 +34,9 @@ COPY --from=builder /app/db ./db
 EXPOSE 8000
 
 # Set default environment variables
-ENV DATABASE_URL=db/go-shorten.db
+ENV DATABASE_URL=db/GoShort.db
 ENV PORT=8000
 ENV GIN_MODE=release
 
 # Command to run the executable
-CMD ["./go-shorten"]
+CMD ["./GoShort"]

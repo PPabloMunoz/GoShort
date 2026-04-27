@@ -6,7 +6,7 @@ services:
     volumes:
       - ./db:/root/db
     environment:
-      - DATABASE_URL=db/go-shorten.db
+      - DATABASE_URL=db/GoShort.db
       - GIN_MODE=release
       - PORT=8000
     restart: unless-stopped

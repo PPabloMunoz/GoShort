@@ -1,7 +1,8 @@
-# go-shorten - URL shortener service
+# GoShort - URL shortener service
 
+# Variables
 mainFile := './cmd/main.go'
-executable := './bin/go-shorten'
+executable := './bin/GoShort'
 
 default:
   @just --list
@@ -10,9 +11,6 @@ build:
   go build -o {{executable}} {{mainFile}}
 
 run: build
-  {{executable}}
-
-release: build
   GIN_MODE=release {{executable}}
 
 dev:

@@ -13,7 +13,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/ppablomunoz/go-shorten/internal/handler"
+	"github.com/ppablomunoz/GoShort/internal/handler"
 	_ "modernc.org/sqlite"
 )
 

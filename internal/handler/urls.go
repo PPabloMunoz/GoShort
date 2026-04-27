@@ -7,8 +7,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"github.com/ppablomunoz/go-shorten/internal/models"
-	"github.com/ppablomunoz/go-shorten/internal/utils"
+	"github.com/ppablomunoz/GoShort/internal/models"
+	"github.com/ppablomunoz/GoShort/internal/utils"
 )
 
 func isValidURL(str string) bool {

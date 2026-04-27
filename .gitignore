@@ -31,4 +31,4 @@ build-errors.log
 .env*
 
 # Database
-db/go-shorten.db*
+db/GoShort.db*

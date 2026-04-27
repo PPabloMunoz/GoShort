@@ -1,4 +1,4 @@
-module github.com/ppablomunoz/go-shorten
+module github.com/ppablomunoz/GoShort
 
 go 1.26.2
 

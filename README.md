@@ -1,4 +1,6 @@
-# go-shorten 🚀
+# GoShort 🚀
+
+<img src="assets/screenshot.png" alt="GoShort Preview" width="800" style="max-width: 100%;">
 
 A minimal, high-performance, self-hosted URL shortener built with Go. It features a modern brutalist web interface and a simple RESTful API.
 
@@ -31,8 +33,8 @@ A minimal, high-performance, self-hosted URL shortener built with Go. It feature
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ppablomunoz/go-shorten.git
-   cd go-shorten
+   git clone https://github.com/ppablomunoz/GoShort.git
+   cd GoShort
    ```
 
 2. Install dependencies:
@@ -62,7 +64,7 @@ Since the application uses SQLite, creating a backup is as simple as copying the
 
 **Backup from container to host:**
 ```bash
-docker cp go-shorten-app-1:/root/db/go-shorten.db ./backup.db
+docker cp GoShort-app-1:/root/db/GoShort.db ./backup.db
 ```
 
 *Note: If you are using the default `docker-compose.yml`, your database is already persisted in the `./db` folder on your host machine.*
