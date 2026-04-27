@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Shorten | Minimal URL Shortener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.png">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    <main class="container">
+        <header class="hero">
+            <h1 class="logo-text">GO-SHORTEN</h1>
+            <p class="subtitle">A brutalist, high-performance URL shortener for the modern web.</p>
+        </header>
+
+        <section class="shortener-box">
+            <form id="shorten-form" class="input-group">
+                <input type="url" id="full-url" placeholder="Paste your long URL here..." required>
+                <button type="submit" id="submit-btn">
+                    <span>SHORTEN</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </form>
+            <div id="result-container" class="result-box hidden">
+                <div class="result-content">
+                    <span class="result-label">YOUR SHORT URL:</span>
+                    <div class="copy-box">
+                        <a href="#" id="short-url-link" target="_blank" class="short-url"></a>
+                        <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="urls-list-section">
+            <div class="section-header">
+                <h2>RECENT LINKS</h2>
+                <div class="status-dot"></div>
+            </div>
+            <div id="urls-list" class="urls-grid">
+                <!-- Links will be injected here -->
+                <div class="loading-state">Fetching links...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built with Go & Gin. No tracking, no bloat.</p>
+    </footer>
+
+    <div id="toast" class="toast">LINK COPIED TO CLIPPBOARD</div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

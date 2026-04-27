@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./db:/root/db
+    environment:
+      - DATABASE_URL=db/go-shorten.db
+      - GIN_MODE=release
+      - PORT=8000
+    restart: unless-stopped

@@ -1,0 +1,18 @@
+PRAGMA journal_mode = WAL;
+PRAGMA synchronous = NORMAL;
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS urls (
+    code TEXT PRIMARY KEY NOT NULL,
+    full_url TEXT NOT NULL,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS clicks (
+    id INTEGER PRIMARY KEY NOT NULL,
+    url_code TEXT NOT NULL,
+    clicked_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (url_code) REFERENCES urls (code)
+    ON DELETE CASCADE
+);
